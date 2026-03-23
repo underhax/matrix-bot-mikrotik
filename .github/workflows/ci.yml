@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v6.0.2
 
       # --- Shell -----------------------------------------------------------
 
       - name: Lint shell scripts with shellcheck
-        uses: ludeeus/action-shellcheck@master
+        uses: ludeeus/action-shellcheck@2.0.0
         with:
           scandir: './docker'
 
       # --- Dockerfile ------------------------------------------------------
 
       - name: Lint Dockerfile with hadolint
-        uses: hadolint/hadolint-action@v3.1.0
+        uses: hadolint/hadolint-action@v3.3.0
         with:
           dockerfile: docker/Dockerfile
 
@@ -38,7 +38,7 @@ jobs:
       # --- Python ----------------------------------------------------------
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7.6.0
         with:
           working-directory: bot
 
