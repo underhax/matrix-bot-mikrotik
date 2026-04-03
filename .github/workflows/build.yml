@@ -25,7 +25,7 @@ jobs:
         run: |
           # Fetch the digest of the base gateway image (our primary dependency).
           GATEWAY_DIG=$(skopeo inspect \
-            docker://ghcr.io/webstudiobond/matrix-commander-rs-gateway:latest \
+            docker://ghcr.io/underhax/matrix-commander-rs-gateway:latest \
             | jq -r .Digest)
 
           # Fetch the digest of the uv image (our secondary dependency).
@@ -43,7 +43,7 @@ jobs:
           # Fetch labels from the currently published latest image.
           if skopeo inspect "docker://$IMAGE_BASE:latest" > meta.json 2>/dev/null; then
             OUR_GATEWAY_DIG=$(jq -r '.Labels["org.opencontainers.image.base.digest"] // "none"' meta.json)
-            OUR_UV_DIG=$(jq -r '.Labels["com.webstudiobond.uv.digest"] // "none"' meta.json)
+            OUR_UV_DIG=$(jq -r '.Labels["com.underhax.uv.digest"] // "none"' meta.json)
           else
             OUR_GATEWAY_DIG="none"
             OUR_UV_DIG="none"
@@ -115,4 +115,4 @@ jobs:
             org.opencontainers.image.version=${{ steps.check.outputs.version_tag }}
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.base.digest=${{ steps.check.outputs.gateway_dig }}
-            com.webstudiobond.uv.digest=${{ steps.check.outputs.uv_dig }}
+            com.underhax.uv.digest=${{ steps.check.outputs.uv_dig }}

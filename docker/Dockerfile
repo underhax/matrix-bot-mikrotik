@@ -22,7 +22,7 @@ FROM ghcr.io/astral-sh/uv:latest AS uv-bin
 
 # --- Stage 2: final runtime image ----------------------------------------
 # hadolint ignore=DL3007
-FROM ghcr.io/webstudiobond/matrix-commander-rs-gateway:latest
+FROM ghcr.io/underhax/matrix-commander-rs-gateway:latest
 
 USER root
 

@@ -1,12 +1,12 @@
 # MikroTik Matrix Bot
 
-[![CI](https://github.com/webstudiobond/matrix-bot-mikrotik/actions/workflows/ci.yml/badge.svg)](https://github.com/webstudiobond/matrix-bot-mikrotik/actions/workflows/ci.yml)
-[![GitHub last commit](https://img.shields.io/github/last-commit/webstudiobond/matrix-commander-rs-gateway)](https://github.com/webstudiobond/matrix-bot-mikrotik/commits/main)
-[![GitHub issues](https://img.shields.io/github/issues/webstudiobond/matrix-commander-rs-gateway)](https://github.com/webstudiobond/matrix-bot-mikrotik/issues)
-[![GitHub repo size](https://img.shields.io/github/repo-size/webstudiobond/matrix-commander-rs-gateway)](https://github.com/webstudiobond/matrix-bot-mikrotik)
+[![CI](https://github.com/underhax/matrix-bot-mikrotik/actions/workflows/ci.yml/badge.svg)](https://github.com/underhax/matrix-bot-mikrotik/actions/workflows/ci.yml)
+[![GitHub last commit](https://img.shields.io/github/last-commit/underhax/matrix-commander-rs-gateway)](https://github.com/underhax/matrix-bot-mikrotik/commits/main)
+[![GitHub issues](https://img.shields.io/github/issues/underhax/matrix-commander-rs-gateway)](https://github.com/underhax/matrix-bot-mikrotik/issues)
+[![GitHub repo size](https://img.shields.io/github/repo-size/underhax/matrix-commander-rs-gateway)](https://github.com/underhax/matrix-bot-mikrotik)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A containerised MikroTik management bot that bridges Matrix rooms to MikroTik routers. Extends the [`matrix-commander-rs-gateway`](https://github.com/webstudiobond/matrix-commander-rs-gateway) base image and supports the full range of deployed MikroTik hardware.
+A containerised MikroTik management bot that bridges Matrix rooms to MikroTik routers. Extends the [`matrix-commander-rs-gateway`](https://github.com/underhax/matrix-commander-rs-gateway) base image and supports the full range of deployed MikroTik hardware.
 
 ---
 
@@ -108,7 +108,7 @@ For end users who want to run the bot without building anything.
 mkdir matrix-bot-mikrotik && cd matrix-bot-mikrotik
 
 # 2. Download the production compose file
-curl -O https://raw.githubusercontent.com/webstudiobond/matrix-bot-mikrotik/main/docker-compose.yaml
+curl -O https://raw.githubusercontent.com/underhax/matrix-bot-mikrotik/main/docker-compose.yaml
 
 # 3. Prepare directories and files — see Host Setup below
 # 4. Complete Matrix Session Login — see Matrix Session Login below
@@ -133,7 +133,7 @@ sudo chown -R 10001:10001 bot_data
 
 ```bash
 # Download the example config and rename it
-curl -o config.yaml https://raw.githubusercontent.com/webstudiobond/matrix-bot-mikrotik/main/config/routers_example.yaml
+curl -o config.yaml https://raw.githubusercontent.com/underhax/matrix-bot-mikrotik/main/config/routers_example.yaml
 sudo chown 10001:10001 config.yaml
 chmod 0600 config.yaml
 ```
@@ -149,7 +149,7 @@ Fill in your router entries — see [Configuration](#configuration).
 The configuration file contains security settings, a command whitelist, and router connection details. Download the annotated example to get started:
 
 ```bash
-curl -o config.yaml https://raw.githubusercontent.com/webstudiobond/matrix-bot-mikrotik/main/config/config_example.yaml
+curl -o config.yaml https://raw.githubusercontent.com/underhax/matrix-bot-mikrotik/main/config/config_example.yaml
 sudo chown 10001:10001 config.yaml && chmod 0600 config.yaml
 ```
 
